@@ -1,0 +1,15 @@
+<?php
+  require_once('wp-config.php');
+  $wp->init();
+  $wp->parse_request();
+  $wp->query_posts();
+  $wp->register_globals();
+  $wp->send_headers();
+
+  // You can add any custom php cude below and also you can use wordpress functions
+	//for example checking the user session
+  if(is_user_logged_in()){
+    echo "User session";
+  }else{
+    echo "User not logged In";
+  }
